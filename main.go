@@ -7,6 +7,8 @@ import (
 	"time"
 )
 
+const MaxIncludeTreeSize = 10
+
 type Tree struct {
 	Left  *Tree `json:"left"`
 	Right *Tree `json:"right"`
@@ -82,7 +84,7 @@ func generateRandomInt() int {
 
 func main() {
 	tree := Tree{}
-	tree.Generate(10)
+	tree.Generate(MaxIncludeTreeSize)
 	tree.Print()
 	sum := tree.Calculate()
 	fmt.Println(sum)
