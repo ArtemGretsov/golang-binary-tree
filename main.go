@@ -68,7 +68,7 @@ func (t *Tree) Calculate() int {
 }
 
 func generateRandomBool() bool {
-	randSource := rand.New(rand.NewSource(time.Now().Unix()))
+	randSource := rand.New(rand.NewSource(time.Now().UnixNano()))
 	min := 0
 	max := 1
 	randValue := randSource.Intn(max - min + 1) + min
@@ -76,7 +76,7 @@ func generateRandomBool() bool {
 }
 
 func generateRandomInt() int {
-	randSource := rand.New(rand.NewSource(time.Now().Unix()))
+	randSource := rand.New(rand.NewSource(time.Now().UnixNano()))
 	min := 0
 	max := 10
 	return randSource.Intn(max - min + 1) + min
